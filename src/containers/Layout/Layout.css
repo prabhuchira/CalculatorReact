@@ -1,0 +1,77 @@
+*{
+    font-family:serif;
+}
+
+.mainContainer{
+    min-width:200px;
+    width:400px;
+    height:650px;
+    border:2px dotted #ffffff57;
+    display: flex;
+    flex-wrap: wrap;
+    background:radial-gradient(#1c1c1c, #2f293c);
+    padding:10px;
+    flex-flow: column;
+    box-shadow: grey 9px 6px 5px 3px;
+    border-radius: 9px;
+    margin:auto;
+    padding-top:35px;
+    border-top: 4px solid #8f3a94;
+}
+
+.keypad1{
+   
+    border:2px groove  #525452;
+    /* width:100%; */
+    flex-grow: 1;
+    box-shadow:1px 1px 1px 1px;
+   
+}
+
+.keypad2{
+    border:1px solid #525452;
+    padding:14px 7px;
+    flex-grow: 4;
+    display:flex;
+    border-radius: 9px;
+    flex-wrap:wrap;
+    box-shadow:1px 1px 1px 1px;
+   
+}
+
+.item{
+     min-width: 23%;
+     font-size:150%;
+     background: linear-gradient(77deg, #b434c0, #664262);
+     color:white;
+    border:none;
+    border:1px solid rgba(255, 255, 255, 0.329);
+    border-radius:9px;
+    margin:1%;
+    text-shadow: 0px -1px 1px black;
+}
+
+.item:active{
+    box-shadow: #483f3f inset 3px 3px 2px 0px;
+    
+}
+
+.active{
+    min-width: 23%;
+    font-size:150%;
+    background: linear-gradient(77deg, #b434c0, #664262);
+    color:white;
+   border:none;
+   border:1px solid rgba(255, 255, 255, 0.329);
+   border-radius:9px;
+   margin:1%;
+   text-shadow: 0px -1px 1px black;
+    box-shadow: #483f3f inset 3px 3px 2px 0px;
+    
+}
+
+.result{
+    color:rgba(116, 116, 116, 0.664);
+    margin-right:2%;
+    text-align: right;
+}
