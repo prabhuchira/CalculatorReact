@@ -45,7 +45,7 @@ class Layout extends Component {
 
         if(typeof(val) == "string"){
              val = val.replace(/^0+/, '');
-                    if(val.match(/\d+\W+$/) ){
+                    if(val.match(/\d+\W+$/ || val.match(/^\W+/)) ){
                             console.log('number deteced');
                             return 0
                           
