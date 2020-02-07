@@ -16,12 +16,12 @@ class Layout extends Component {
         display:null,
         header:{
             main:'Calculator Using React, State, Flex',
-            sub:'-peteragnus'
+            sub:'-Peteragnus'
         },
        
     }
 
-    headerData = this.state.header;
+    headerData = this.state.header; 
     element = null;
     
     
@@ -52,7 +52,7 @@ class Layout extends Component {
                     if(val.match(/\d+\W+$/ || val.match(/^\W+/)) ){
                             console.log('number deteced');
                             console.log(val,"after")
-                            return 0
+                            return 0    
                           
                     }else 
                     {  
