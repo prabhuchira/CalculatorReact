@@ -44,16 +44,29 @@ class Layout extends Component {
          
 
         if(typeof(val) == "string"){
+            console.log('string ')
+            console.log(val);
              val = val.replace(/^0+/, '');
+          
+             
                     if(val.match(/\d+\W+$/ || val.match(/^\W+/)) ){
                             console.log('number deteced');
+                            console.log(val,"after")
                             return 0
                           
                     }else 
                     {  
-                        let a= eval(val);
-                        return a
+                        try{
+                            let a= eval(val);
+                            console.log(val,"after")
+                            return a
+        
+                        }
+                        catch(e){
+                            return "Decimals not allowed"
+                        }
                     }
+      
         }
         else{
             return val;
@@ -63,7 +76,8 @@ class Layout extends Component {
         
 
  capEvent = (item)=>{
-
+    console.log(item);
+   
     switch(item){
         case "=":{
             item="";
@@ -110,6 +124,7 @@ class Layout extends Component {
                     }
 
                     if(event.key == "Enter"){
+                        console.log(event.key)
                         document.getElementById('item-=').className = "active";
                         document.getElementById('item-=').click();
                     }
@@ -125,7 +140,7 @@ class Layout extends Component {
 
                         if(document.getElementById('item-'+event.key) !== null){
                             document.getElementById('item-'+event.key).className = "item";
-                            
+                                
                         }
 
                         document.getElementById('backspace').className = "item";
@@ -139,7 +154,11 @@ class Layout extends Component {
     
 
   render(){
-   
+    
+        const styles={
+            fontSize:"18px"
+        }
+    
       return(
           <div>
         
@@ -147,18 +166,14 @@ class Layout extends Component {
               <div className="mainContainer">
           
                     <div className="keypad1">
-                        <input placeholder="0" style={{
-                            width:"99%",
-                           height:"55%",
-                          fontSize:"32px",
-                          textAlign:"right",
-                          background:"transparent",
-                          margin: "2px -6px",
-                          border:"none",
-                          color:"#ffffff91"
-                        }} value={ this.state.val } />
+                        <input placeholder="0" className="InputField" style={this.state.val === "Decimals not allowed" ? styles : null} value={ this.state.val === "Decimals not allowed"  ? "Decimals not allowed Reset and Try again." :this.state.val} />
                         
-                    {this.state.loading == true ?<div className="result">{this.state.display}</div>:null}
+                    {/* {this.state.loading == true ?<div className="result"  style={this.state.display === "Decimals not allowed" ? styles : null}>{this.state.display}</div>:null} */}
+                    {this.state.loading == true ?<div className="result"  >
+                        {this.state.display   }
+                        
+                        </div>:null}
+                   
                         
                     </div>
                     <br />

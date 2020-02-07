@@ -3,8 +3,8 @@
 }
 
 .mainContainer{
-    min-width:200px;
-    width:400px;
+    max-width: 400px;
+    /* width:400px; */
     height:650px;
     border:2px dotted #ffffff57;
     display: flex;
@@ -74,4 +74,17 @@
     color:rgba(116, 116, 116, 0.664);
     margin-right:2%;
     text-align: right;
+}
+
+.InputField{
+    
+        width:99%;
+       height:55%;
+      font-size:32px;
+      text-align:right;
+      background:transparent;
+      margin: 2px -6px;
+      border:none;
+      color:#ffffff91
+    
 }
